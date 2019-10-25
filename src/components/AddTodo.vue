@@ -6,7 +6,7 @@
             </b-field>
         </section>
         <footer>
-            <b-button type="is-text" @click="success" native-type="submit">Add ToDo</b-button>
+            <b-button type="is-text" style="text-decoration: none;" @click="success" native-type="submit">Add ToDo</b-button>
         </footer>
     </form>
 </template>
@@ -46,7 +46,7 @@ export default {
   #add-todo {
     max-width: 600px;
     min-height: 130px;
-    margin: 20px auto 0px auto;
+    margin: 50px auto 0px auto;
     border-radius: 3px;
     box-shadow: 5px 5px 0px rgba(0,0,0,0.15);
     background-color: #ffffff;
@@ -58,5 +58,6 @@ export default {
       align-items: center;
       display: flex;
       height: 54px;
+      margin-top: 10px;
   }
 </style>

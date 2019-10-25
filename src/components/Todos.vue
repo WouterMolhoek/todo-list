@@ -23,7 +23,7 @@ export default {
         display: flex;
         flex-wrap: wrap-reverse;
         justify-content: center;
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 </style>
