@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="tile is-ancestor" >
         <div v-bind:key="todo.id" v-for="todo in todos">
             <TodoItem v-bind:todo="todo" v-on:del-todo="$emit('del-todo', todo.id)"/>
         </div>
@@ -18,6 +18,10 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-
+<style scoped>
+    div.tile.is-ancestor {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        margin-top: 30px;
+    }
 </style>
