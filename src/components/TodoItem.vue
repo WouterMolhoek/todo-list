@@ -1,5 +1,5 @@
 <template>
-    <div class="tile" v-bind:class="{'is-complete':todo.completed}">
+    <div class="tile tile-card" v-bind:class="{'is-complete':todo.completed}">
         <div class="tile is-parent is-vertical">
             <article class="tile is-child notification is-warning">
                 <header class="tile-header">
@@ -27,9 +27,12 @@ export default {
 </script>
 
 <style scoped>
-    .tile {
-        width: 480px;
-        margin: 0px 10px 0px 10px;
+    .tile-card {
+        width: 400px;
+    }
+
+    article.tile {
+        box-shadow: 5px 5px 0px rgba(0,0,0,0.15);
     }
 
     .tile-title {

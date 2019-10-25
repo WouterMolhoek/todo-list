@@ -22,6 +22,8 @@ export default {
     div.tile.is-ancestor {
         display: flex;
         flex-wrap: wrap-reverse;
-        margin-top: 30px;
+        justify-content: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 </style>

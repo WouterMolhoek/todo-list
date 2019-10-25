@@ -62,17 +62,6 @@ export default {
   body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
-  }
-
-  .btn {
-    display: inline-block;
-    border: none;
-    background-color: #555;
-    color: #fff;
-    padding: 7px 20px;
-    cursor: pointer;
-  }
-  .btn:hover {
-    background-color: #666;
+    background-color: lavender;
   }
 </style>

@@ -1,16 +1,11 @@
-# todo-list
+# ToDo List
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Run Project
 ```
 npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
 ```
