@@ -1,7 +1,7 @@
 <template>
     <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
         <p v-on:change="markComplete"><b-checkbox type="checkbox">{{todo.title}}</b-checkbox></p>
-        <b-button @click="$emit('del-todo', todo.id)" type="is-danger" icon-right="delete" />
+        <b-button class="button" @click="$emit('del-todo', todo.id)" type="is-danger" icon-right="delete" />
     </div>
 </template>
 
@@ -28,5 +28,9 @@ export default {
     }
     .is-complete {
         text-decoration: line-through;
+    }
+
+    .button:active {
+        transform: scale(0.90);
     }
 </style>

@@ -18,7 +18,6 @@ import 'buefy/dist/buefy.css'
 
 Vue.use(Buefy)
 
-
 export default {
   name: 'app',
   components: {
