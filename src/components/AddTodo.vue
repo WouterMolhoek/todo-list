@@ -54,10 +54,10 @@ export default {
   }
 
   #add-todo footer {
-      justify-content: flex-end;
-      align-items: center;
-      display: flex;
-      height: 54px;
-      margin-top: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    height: 54px;
+    margin-top: 10px;
   }
 </style>

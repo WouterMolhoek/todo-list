@@ -6,7 +6,7 @@
                     <p class="tile-title">{{todo.title}}</p>
                 </header>
                 <footer class="tile-footer">
-                    <p v-on:change="markComplete"><b-checkbox>Striped</b-checkbox></p>
+                    <p v-on:change="markComplete"><b-checkbox>Line-through</b-checkbox></p>
                     <b-button class="button" @click="$emit('del-todo', todo.id)" type="is-danger" icon-right="delete" />
                 </footer>
             </article>

@@ -3,6 +3,7 @@
     <Header />
     <AddTodo v-on:add-todo="addTodo"/>
     <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
+    <b-loading :is-full-page="isFullPage" :active.sync="isLoading" :can-cancel="true"></b-loading>
   </div>
 </template>
 
@@ -27,7 +28,9 @@ export default {
   },
   data() {
     return {
-      todos: []
+      todos: [],
+      isLoading: true,
+      isFullPage: true
     }
   },
   methods: {
@@ -46,7 +49,10 @@ export default {
   },
   created() {
       axios.get('https://jsonplaceholder.typicode.com/todos?_limit=12')
-      .then(res => this.todos = res.data)
+      .then(res => {
+        this.todos = res.data
+        this.isLoading = false
+      })
       .catch(err => console.log(err));
   }
 }
