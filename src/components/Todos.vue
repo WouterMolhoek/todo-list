@@ -1,6 +1,5 @@
 <template>
     <div class="tile is-ancestor" >
-        <b-loading :is-full-page="isFullPage" :active.sync="isLoading" :can-cancel="false"></b-loading>
         <div v-bind:key="todo.id" v-for="todo in todos">
             <TodoItem v-bind:todo="todo" v-on:del-todo="$emit('del-todo', todo.id)"/>
         </div>
