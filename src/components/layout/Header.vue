@@ -14,13 +14,10 @@ export default {
   .header {
     background: #333;
     color: #fff;
-    text-align: center;
-    padding: 10px;
-  }
-  .header a {
-    color: #fff;
-    padding-right: 5px;
-    text-decoration: none;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>
 

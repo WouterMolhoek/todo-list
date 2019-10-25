@@ -11,7 +11,13 @@ import Header from './components/layout/Header';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import axios from  'axios';
-import { log } from 'util';
+
+import Vue from 'vue'
+import Buefy from 'buefy'
+import 'buefy/dist/buefy.css'
+
+Vue.use(Buefy)
+
 
 export default {
   name: 'app',
