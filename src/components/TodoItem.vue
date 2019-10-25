@@ -63,4 +63,5 @@ export default {
     .button:active {
         transform: scale(0.90);
     }
+
 </style>

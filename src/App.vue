@@ -36,6 +36,11 @@ export default {
   methods: {
     deleteTodo(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
+      // If all the tiles have been removed, change background to an image
+      if (this.todos.length == 0) {
+        const container = document.getElementById('tile-container');
+        container.classList.add('empty-img');
+      }
     },
     addTodo(newTodo) {
       const {title, completed} = newTodo;
@@ -48,10 +53,10 @@ export default {
     }
   },
   created() {
-      axios.get('https://jsonplaceholder.typicode.com/todos?_limit=12')
+      axios.get('https://jsonplaceholder.typicode.com/todos?_limit=2')
       .then(res => {
-        this.todos = res.data
-        this.isLoading = false
+          this.todos = res.data
+          this.isLoading = false
       })
       .catch(err => console.log(err));
   }
@@ -69,5 +74,15 @@ export default {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
     background-color: lavender;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+  }
+
+  .empty-img {
+    background-image: url(assets/empty.svg);
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: 350px;
   }
 </style>
