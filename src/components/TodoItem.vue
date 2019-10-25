@@ -32,7 +32,7 @@ export default {
     }
 
     article.tile {
-        box-shadow: 5px 5px 0px rgba(0,0,0,0.15);
+        box-shadow: 3px 3px 0px rgba(0,0,0,0.15);
     }
 
     .tile-title {

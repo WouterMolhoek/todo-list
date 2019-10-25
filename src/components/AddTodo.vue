@@ -5,7 +5,9 @@
                 <b-input v-model="title" placeholder="No label" rounded></b-input>
             </b-field>
         </section>
-        <button class="button is-medium is-success" @click="success">Add ToDo</button>
+        <footer>
+            <b-button type="is-text" @click="success" native-type="submit">Add ToDo</b-button>
+        </footer>
     </form>
 </template>
 
@@ -42,15 +44,19 @@ export default {
 
 <style scoped>
   #add-todo {
-      max-width: 700px;
-      height: 100px;
-      margin: 20px auto 0px auto;
-      border-radius: 3px;
-      box-shadow: 5px 5px 0px rgba(0,0,0,0.15);
-      display: flex;
-      background-color: #ffffff;
-      padding: 25px;
-      justify-content: space-between;
+    max-width: 600px;
+    min-height: 130px;
+    margin: 20px auto 0px auto;
+    border-radius: 3px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.15);
+    background-color: #ffffff;
+    padding: 25px;
+  }
+
+  #add-todo footer {
+      justify-content: flex-end;
       align-items: center;
+      display: flex;
+      height: 54px;
   }
 </style>
