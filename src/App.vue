@@ -43,6 +43,12 @@ export default {
       }
     },
     addTodo(newTodo) {
+      // If the background image has been changed, change it back
+      if (this.todos.length + 1 != 0) {
+        const container = document.getElementById('tile-container');
+        container.classList.remove('empty-img');
+      }
+
       const {title, completed} = newTodo;
       axios.post('https://jsonplaceholder.typicode.com/todos', {
         title,

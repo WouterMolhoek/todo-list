@@ -26,6 +26,7 @@ export default {
         padding-top: 50px;
         padding-bottom: 50px;
         min-height: 400px;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
     div.tile.is-ancestor:last-child {
