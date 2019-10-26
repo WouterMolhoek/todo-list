@@ -36,6 +36,7 @@ export default {
   methods: {
     deleteTodo(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
+
       // If all the tiles have been removed, change background to an image
       if (this.todos.length == 0) {
         const container = document.getElementById('tile-container');
@@ -43,7 +44,8 @@ export default {
       }
     },
     addTodo(newTodo) {
-      // If the background image has been changed, change it back
+
+      // If the background has been changed to an image, change it back
       if (this.todos.length + 1 != 0) {
         const container = document.getElementById('tile-container');
         container.classList.remove('empty-img');
@@ -56,13 +58,20 @@ export default {
       })
         .then(res => this.todos = [...this.todos, res.data])
         .catch(err => console.log(err));
+
     }
   },
   created() {
-      axios.get('https://jsonplaceholder.typicode.com/todos?_limit=2')
+      axios.get('https://jsonplaceholder.typicode.com/todos?_limit=0')
       .then(res => {
           this.todos = res.data
           this.isLoading = false
+
+          // If all the tiles have been removed, change background to an image
+          if (this.todos.length == 0) {
+            const container = document.getElementById('tile-container');
+            container.classList.add('empty-img');
+          }
       })
       .catch(err => console.log(err));
   }
@@ -87,8 +96,16 @@ export default {
 
   .empty-img {
     background-image: url(assets/empty.svg);
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-position: center center;
-    background-size: 350px;
+    background-size: 250px;
   }
+
+  .empty-img::after {
+    content: 'No tiles...';
+    font-style: italic;
+    position: absolute;
+    margin-top: 20px;
+  }
+
 </style>
