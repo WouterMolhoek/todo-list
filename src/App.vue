@@ -56,13 +56,13 @@ export default {
         title,
         completed
       })
-        .then(res => this.todos = [...this.todos, res.data])
+        .then(res => this.todos.unshift(res.data))
         .catch(err => console.log(err));
 
     }
   },
   created() {
-      axios.get('https://jsonplaceholder.typicode.com/todos?_limit=0')
+      axios.get('https://jsonplaceholder.typicode.com/todos?_limit=2')
       .then(res => {
           this.todos = res.data
           this.isLoading = false

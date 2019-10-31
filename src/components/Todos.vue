@@ -21,7 +21,7 @@ export default {
 <style scoped>
     #tile-container {
         display: flex;
-        flex-wrap: wrap-reverse;
+        flex-wrap: wrap;
         justify-content: center;
         padding-top: 50px;
         padding-bottom: 50px;
