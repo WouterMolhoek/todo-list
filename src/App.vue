@@ -42,19 +42,4 @@ export default {
     width: 100%;
     min-height: 100%;
   }
-
-  .empty-img {
-    background-image: url(assets/empty.svg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 250px;
-  }
-
-  .empty-img::after {
-    content: 'No tiles...';
-    font-style: italic;
-    position: absolute;
-    margin-top: 20px;
-  }
-
 </style>

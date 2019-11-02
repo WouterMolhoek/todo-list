@@ -1,8 +1,11 @@
 <template>
     <form id="add-todo" @submit="addNewTodo">
         <section>
-            <b-field label="Type a ToDo">
+            <b-field label="Title">
                 <b-input v-model="title" placeholder="New Todo" required rounded></b-input>
+            </b-field>
+            <b-field label="Message">
+                <b-input v-model="msg" maxlength="200" type="textarea" required></b-input>
             </b-field>
         </section>
         <footer>
@@ -18,7 +21,8 @@ export default {
     name: 'AddTodo',
     data() {
         return {
-            title: ''
+            title: '',
+            msg: ''
         }
     },
     methods: {
@@ -27,11 +31,14 @@ export default {
             e.preventDefault();
             const newTodo = {
                 title: this.title,
+                msg: this.msg,
                 completed: false
             }
-            this.addTodo(newTodo);
-            this.title = '';
-            this.success()
+            this.$store.dispatch('addTodo', newTodo).then(() => {
+                this.success()
+                this.title = '';
+                this.msg = '';  
+            });
         },
         success() {
             this.$buefy.toast.open({
