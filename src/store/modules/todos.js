@@ -16,11 +16,19 @@ const actions = {
     deleteTodo({commit}, id) {
         const newTodos = state.todos.filter(todo => todo.id !== id);
         commit('setTodos', newTodos);
+    },
+    addTodo({commit},newTodo) {
+        const {title, completed} = newTodo;
+        axios.post('https://jsonplaceholder.typicode.com/todos', {
+            title,
+            completed
+        }).then(commit('addTodo', newTodo));
     }
 };
 
 const mutations = {
-    setTodos: (state, todos) => (state.todos = todos)
+    setTodos: (state, todos) => (state.todos = todos),
+    addTodo: (state, todo) => state.todos.unshift(todo)
 };
 
 export default {

@@ -1,17 +1,18 @@
 <template>
-    <form id="add-todo" @submit="addTodo">
+    <form id="add-todo" @submit="addNewTodo">
         <section>
             <b-field label="Type a ToDo">
-                <b-input v-model="title" placeholder="No label" rounded></b-input>
+                <b-input v-model="title" placeholder="New Todo" required rounded></b-input>
             </b-field>
         </section>
         <footer>
-            <b-button type="is-text" style="text-decoration: none;" @click="success" native-type="submit">Add ToDo</b-button>
+            <b-button type="is-text" style="text-decoration: none;" native-type="submit">Add ToDo</b-button>
         </footer>
     </form>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 
 export default {
     name: 'AddTodo',
@@ -21,14 +22,16 @@ export default {
         }
     },
     methods: {
-        addTodo(e) {
+        ...mapActions(['addTodo']),
+        addNewTodo(e) {
             e.preventDefault();
             const newTodo = {
                 title: this.title,
                 completed: false
             }
-            this.$emit('add-todo', newTodo)
+            this.addTodo(newTodo);
             this.title = '';
+            this.success()
         },
         success() {
             this.$buefy.toast.open({

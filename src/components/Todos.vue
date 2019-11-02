@@ -14,6 +14,7 @@
                 </div>
             </div>
         </div>
+        <b-loading :is-full-page="true" :active.sync="isLoading" :can-cancel="false"></b-loading>
     </div>
 </template>
 
@@ -26,8 +27,15 @@ export default {
     methods: {
         ...mapActions(['getTodos','deleteTodo'])
     },
+    data: function() {
+        return {
+            isLoading: true
+        }
+    },
     created() {
-        this.getTodos(10);
+        this.$store.dispatch('getTodos', 10).then(()=> {
+            this.isLoading = false;
+        })
     }
 }
 </script>
