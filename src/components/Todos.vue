@@ -15,8 +15,7 @@
                 <b-checkbox type="is-success" v-model="todo.completed">Completed</b-checkbox>
               </div>
               <b-dropdown aria-role="list">
-                <b-icon class="button-icon" icon="dots-vertical" slot="trigger"></b-icon>
-
+                <b-icon class="button-icon" icon="dots-vertical" slot="trigger" size="is-small"></b-icon>
                 <b-dropdown-item aria-role="listitem" @click="deleteTile(todo.id)">
                   <div class="media">
                     <b-icon class="media-left" icon="delete"></b-icon>

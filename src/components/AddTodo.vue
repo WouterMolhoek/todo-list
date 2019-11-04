@@ -2,7 +2,7 @@
     <form id="add-todo" @submit="addNewTodo">
         <section>
             <b-field label="Title">
-                <b-input v-model="title" placeholder="New Todo" required rounded></b-input>
+                <b-input v-model="title" placeholder="New Todo" required></b-input>
             </b-field>
             <b-field label="Message">
                 <b-input v-model="msg" maxlength="200" type="textarea" required></b-input>
