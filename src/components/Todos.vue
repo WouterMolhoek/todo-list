@@ -14,12 +14,19 @@
               <div class="field">
                 <b-checkbox type="is-success" v-model="todo.completed">Completed</b-checkbox>
               </div>
-              <b-button
-                class="button"
-                type="is-danger"
-                @click="deleteTile(todo.id)"
-                icon-right="delete"
-              />
+              <b-dropdown aria-role="list">
+                <b-icon class="button-icon" icon="dots-vertical" slot="trigger"></b-icon>
+
+                <b-dropdown-item aria-role="listitem" @click="deleteTile(todo.id)">
+                  <div class="media">
+                    <b-icon class="media-left" icon="delete"></b-icon>
+                    <div class="media-content">
+                      <h3>Delete</h3>
+                      <small>This todo will be removed</small>
+                    </div>
+                  </div>
+                </b-dropdown-item>
+              </b-dropdown>
             </footer>
           </article>
         </div>
@@ -104,6 +111,7 @@ div.field:not(:last-child) {
 
 article.tile {
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15);
+  background-color: #fff475;
 }
 
 .tile-title {
@@ -133,9 +141,10 @@ article.tile {
   margin-top: 10px;
 }
 
-.button:active {
-  transform: scale(0.9);
+.button-icon {
+  cursor: pointer;
 }
+
 .empty-img {
   background-image: url(../assets/empty.svg);
   background-repeat: no-repeat;

@@ -37,7 +37,7 @@ export default {
   body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
-    background-color: lavender;
+    background: lightblue;
     position: absolute;
     width: 100%;
     min-height: 100%;
